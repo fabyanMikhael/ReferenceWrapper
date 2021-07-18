@@ -1,11 +1,15 @@
 from __future__ import annotations
+from typing import Generic, TypeVar
+
+U = TypeVar('U')
+
 class __tmp__:
     '''dont use this.'''
     @staticmethod
     def load(id): raise NotImplementedError("please add a constant TYPE = your_class for the Reference class!")
 
-class Reference(object):
-    TYPE = __tmp__
+class Reference(Generic[U]):
+    TYPE : U = __tmp__
     REFERENCES : dict[str,Reference] = {}
     def __init__(self, id) -> None:
         self.__referencing__ = None
@@ -44,7 +48,7 @@ class Reference(object):
             ref.__referencing__ = None
 
     @classmethod
-    def Get(cls, id) -> TYPE:
+    def Get(cls, id) -> U:
         if id in cls.REFERENCES:
             return cls.REFERENCES[id]
         return cls(id=id)
