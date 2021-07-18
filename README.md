@@ -7,7 +7,7 @@ a python module that lets you wrap a class and control references to it
 * You can `save` and `delete` the `objects` without worrying about it being `held` by any `other objects`
 * It makes it `possible` to easily `serialize` into `json` format even if there are `circular references`
 * `lazy loads` the objects once an `attribute` is `accessed`
-* Works with using [AutoJson😉](https://www.google.com)
+* Works with using [Auto-Json😉](https://github.com/fabyanMikhael/Auto-Json)
 
 # usage
 Add a static method with `@staticmethod` decorator called `load` that takes in a `parameter` of `id`. \
